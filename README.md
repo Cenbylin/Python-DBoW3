@@ -1,8 +1,8 @@
 # Python wrapper for [DBoW3](https://github.com/rmsalinas/DBow3)
 
-An example [pybind11](https://github.com/pybind/pybind11) module built with a
-CMake-based build system. This is useful for C++ codebases that have an existing
-CMake project structure.
+Originally used to implement ORBSLAM2 with Python. 
+
+This repo will consider supporting more general application scenarios.
 
 
 ## Prerequisites
