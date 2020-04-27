@@ -7,3 +7,5 @@ _generate/
 *.egg-info
 cmake-build-debug/
 conda.recipe/
+.DS_Store
+.idea/
