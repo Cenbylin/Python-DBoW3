@@ -48,4 +48,4 @@ private:
     DBoW3::Database *database;
 };
 
-#endif CMAKE_EXAMPLE_WRAPPER_DATABASE_H
+#endif

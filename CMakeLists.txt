@@ -23,8 +23,10 @@ SET(REQUIRED_LIBRARIES ${REQUIRED_LIBRARIES} ${OpenCV_LIBS})
 #   Find Dependencies -- python numpy
 # ----------------------------------------------------------------------------
 find_package(PythonLibs 3 REQUIRED)
-include(Cmake/FindNumPy.cmake)
+include_directories(${PYTHON_INCLUDE_DIRS})
+SET(REQUIRED_LIrm BRARIES ${PYTHON_LIBRARIES})
 
+include(Cmake/FindNumPy.cmake)
 include_directories(${PYTHON_NUMPY_INCLUDE_DIR})
 # ----------------------------------------------------------------------------
 #   Find Dependencies -- DBoW3
@@ -40,12 +42,13 @@ SET(REQUIRED_LIBRARIES DBoW3)
 # ----------------------------------------------------------------------------
 #   source
 # ----------------------------------------------------------------------------
-SET(SOURCE
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/ndarray_converter.cpp
-        )
+#SET(SOURCE
+#        xxx.cpp
+#        )
 
 SET(SOURCE_PYBIND
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/pydbow3.cpp
+        ${PROJECT_SOURCE_DIR}/src/pydbow3.cpp
+        ${PROJECT_SOURCE_DIR}/src/ndarray_converter.cpp
         )
 
 include_directories(
