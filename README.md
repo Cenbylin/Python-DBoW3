@@ -14,6 +14,9 @@ This repo will consider supporting more general application scenarios.
 
 
 ## Installation
+```bash
+pip install DBoW3Py
+```
 
 Just clone this repository and pip install. Note the `--recursive` option which is
 needed for the pybind11 submodule:
@@ -23,6 +26,14 @@ git clone --recursive https://github.com/Cenbylin/Python-DBoW3.git
 cd ./Python-DBoW3
 pip install .
 ```
+
+## Usage
+
+```python
+import DBoW3Py as dbow
+```
+
+more examples are comming 
 
 ## License
 

@@ -20,7 +20,7 @@
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(PyDBoW3, m) {
+PYBIND11_MODULE(DBoW3Py, m) {
     NDArrayConverter::init_numpy();
 
     m.doc() = R"pbdoc(

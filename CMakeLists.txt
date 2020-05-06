@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(PyDBoW3)
+project(DBoW3Py)
 
 add_subdirectory(pybind11)
 # ----------------------------------------------------------------------------
@@ -22,9 +22,9 @@ SET(REQUIRED_LIBRARIES ${REQUIRED_LIBRARIES} ${OpenCV_LIBS})
 # ----------------------------------------------------------------------------
 #   Find Dependencies -- python numpy
 # ----------------------------------------------------------------------------
-find_package(PythonLibs 3 REQUIRED)
-include_directories(${PYTHON_INCLUDE_DIRS})
-SET(REQUIRED_LIBRARIES ${PYTHON_LIBRARIES})
+#find_package(PythonLibs 3 REQUIRED)
+#include_directories(${PYTHON_INCLUDE_DIRS})
+#SET(REQUIRED_LIBRARIES ${PYTHON_LIBRARIES})
 
 include(Cmake/FindNumPy.cmake)
 include_directories(${PYTHON_NUMPY_INCLUDE_DIR})
@@ -55,7 +55,7 @@ include_directories(
         ${PROJECT_SOURCE_DIR}/src/
 )
 
-pybind11_add_module(PyDBoW3 ${SOURCES} ${SOURCE_PYBIND})
-target_link_libraries(PyDBoW3 PRIVATE ${REQUIRED_LIBRARIES})
+pybind11_add_module(DBoW3Py ${SOURCES} ${SOURCE_PYBIND})
+target_link_libraries(DBoW3Py PRIVATE ${REQUIRED_LIBRARIES})
 
 

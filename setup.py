@@ -61,13 +61,14 @@ class CMakeBuild(build_ext):
         subprocess.check_call(['cmake', '--build', '.'] + build_args, cwd=self.build_temp)
 
 setup(
-    name='PyDBoW3',
-    version='0.0.1',
+    name='DBoW3Py',
+    version='0.0.2',
     author='Ancheng Lin',
-    author_email='Ancheng Lin@ieee.org',
+    author_email='ancheng.lin@ieee.org',
     description='python wrapper of DBoW3',
+    url='https://github.com/Cenbylin/Python-DBoW3',
     long_description='',
-    ext_modules=[CMakeExtension('PyDBoW3')],
+    ext_modules=[CMakeExtension('DBoW3Py')],
     install_requires=['numpy'],
     setup_requires=['numpy'],
     cmdclass=dict(build_ext=CMakeBuild),
