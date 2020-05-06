@@ -18,7 +18,7 @@ This repo will consider supporting more general application scenarios.
 pip install DBoW3Py
 ```
 
-Just clone this repository and pip install. Note the `--recursive` option which is
+**Or** just clone this repository and pip install. Note the `--recursive` option which is
 needed for the pybind11 submodule:
 
 ```bash
