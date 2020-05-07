@@ -62,7 +62,7 @@ class CMakeBuild(build_ext):
 
 setup(
     name='DBoW3Py',
-    version='0.0.2',
+    version='0.0.3',
     author='Ancheng Lin',
     author_email='ancheng.lin@ieee.org',
     description='python wrapper of DBoW3',

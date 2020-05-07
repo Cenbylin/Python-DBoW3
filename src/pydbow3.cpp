@@ -10,8 +10,10 @@
 // DBoW3
 #include "DBoW3/DBoW3.h"
 
-// type catser for Numpy <=> cv:Mat
+// type caster for Numpy <=> cv:Mat
 #include "ndarray_converter.h"
+// type caster for opencv type
+#include "opencv_type_converter.h"
 
 #include "wrapper/wrapper_vocabulary.h"
 #include "wrapper/wrapper_database.h"
@@ -41,15 +43,6 @@ PYBIND11_MODULE(DBoW3Py, m) {
             .value("BHATTACHARYYA", DBoW3::BHATTACHARYYA)
             .value("DOT_PRODUCT", DBoW3::DOT_PRODUCT);
 
-    // Class
-    py::class_<KeyPoint>(m, "KeyPoint")
-            .def(py::init<float, tuple<float, float>, float, float, int, int>(),
-                    py::arg("angle"),
-                    py::arg("pt"),
-                    py::arg("response"),
-                    py::arg("size")=31.0,
-                    py::arg("class_id")=-1,
-                    py::arg("octave")=0);
 
     py::class_<BowSearchFn>(m, "BowSearchFn")
             .def(py::init<>())

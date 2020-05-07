@@ -11,23 +11,6 @@
 
 using namespace std;
 
-class KeyPoint{
-public:
-    float angle;
-    tuple<float, float> pt;
-    int class_id;
-    int octave;
-    float response;
-    float size;
-
-    KeyPoint(float angle, tuple<float, float> pt, float response, float size=31, int class_id=-1, int octave=0):
-    angle(angle),pt(pt),response(response),size(size),class_id(class_id),octave(octave){
-
-    };
-    ~ KeyPoint(){
-
-    };
-};
 
 class BowSearchFn {
 public:
@@ -54,7 +37,7 @@ public:
      */
     tuple<int, vector<int>> SearchByBoW_kf_f(
             const DBoW3::FeatureVector &vFeatVecKF, const DBoW3::FeatureVector &vFeatVecF,
-            const vector<KeyPoint> &keysUnKF, const vector<KeyPoint> &keysUnF,
+            const vector<cv::KeyPoint> &keysUnKF, const vector<cv::KeyPoint> &keysUnF,
             const cv::Mat &descKF, const cv::Mat &descF) {
 
         // 保存F中每个keypoint能对应上KF的哪个KP
@@ -130,7 +113,7 @@ public:
                             // 步骤5：更新特征点的MapPoint在KF的index
                             vpMapPointMatches[bestIdxF] = realIdxKF;
 
-                            const KeyPoint &kp = keysUnKF[realIdxKF];
+                            const cv::KeyPoint &kp = keysUnKF[realIdxKF];
 
                             if (mbCheckOrientation) {
                                 // trick!
